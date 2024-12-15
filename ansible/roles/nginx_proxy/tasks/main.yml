@@ -1,0 +1,12 @@
+---
+- name: Установка Nginx
+  apt:
+    name: "nginx"
+    state: present
+
+- name: Настройка прокси
+  ansible.builtin.copy:
+    src: default
+    dest: /etc/nginx/sites-available/default
+  notify: "Nginx Reloader"
+

@@ -1,0 +1,19 @@
+---
+linux:
+  children:
+    proxy:
+      hosts:
+        vm-1: 
+          ansible_host: 89.169.152.179 
+    nginx:
+      hosts:
+        vm-2:
+          ansible_host: 89.169.143.213
+        vm-3:
+          ansible_host: 89.169.129.159
+  vars:
+    ansible_user: "s20233673"
+    ansible_ssh_private_key_file: /home/s20233673/.ssh/id_ed25519
+    connection_protocol: ssh
+    ansible_become: true
+

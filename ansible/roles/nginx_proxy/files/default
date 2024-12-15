@@ -1,0 +1,14 @@
+upstream backend { 
+    server 89.169.143.213:80; 
+    server 89.169.129.159:80; 
+} 
+
+server { 
+    listen 3000; 
+    server_name _; 
+
+    location / { 
+        proxy_pass http://backend; 
+    } 
+}
+
